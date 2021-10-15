@@ -1,28 +1,30 @@
-class Ball {
+// 별 객체
+class Star {
   constructor(x, y, radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
-    // this.color = colors[Math.floor(Math.random() * 6)];
-    this.color = "#ffffff";
+    this.color = Math.floor(Math.random() * 360 + 1);
     this.angle = Math.random() * Math.PI * 2;
     this.power = 0.1;
     this.vx = this.power * Math.cos(this.angle);
     this.vy = this.power * Math.sin(this.angle);
-    this.opacity = Math.random();
+    this.opacity = Math.random() * 0.8;
     this.checkOpacity = true;
-    this.dopacity = Math.random() * (0.006 - 0.002) + 0.002;
+    this.dopacity = 0.1 * (Math.random() * 1.2);
   }
 
+  // 별 그리는 메소드
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
     ctx.closePath();
-    ctx.fillStyle = this.color;
+    ctx.fillStyle = `hsla(${this.color}, 30%, 80%, ${this.opacity})`;
     ctx.globalAlpha = this.opacity;
     ctx.fill();
   }
 
+  // 별의 상태를 업데이트 시키는 메소드
   update() {
     this.x += this.vx;
     this.y += this.vy;
@@ -41,25 +43,22 @@ class Ball {
       this.vx = -this.vx;
     }
   }
+}
 
-  updatePosition() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
+// 별을 생성하는 함수
+function createStar() {
+  for (let i = 0; i < starCount; i++) {
+    stars[i] = new Star(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * (1.5 - 0.5) + 0.5);
   }
 }
 
-function init() {
-  for (let i = 0; i < 1000; i++) {
-    balls[i] = new Ball(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * (2 - 1) + 1);
-  }
-}
-
-function animate() {
+// 각 별들의 모션을 반복적으로 실행하는 함수
+function render() {
   ctx.fillStyle = "rgba(255,255,255,0.1)";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < 1000; i++) {
-    balls[i].update();
-    balls[i].draw();
+  for (let i = 0; i < starCount; i++) {
+    stars[i].update();
+    stars[i].draw();
   }
 
   window.addEventListener("resize", function () {
@@ -67,58 +66,32 @@ function animate() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // 각 객체가 움직일 수 있는 범위 재설정
-    for (let i = 0; i < 1000; i++) {
-      balls[i].updatePosition();
+    // 별의 개수 재설정
+    stars = [];
+    starCount = (window.innerWidth + window.innerHeight) * 0.45;
+    for (let i = 0; i < starCount; i++) {
+      stars[i] = new Star(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * (1.5 - 0.5) + 0.5);
     }
   });
 
-  requestAnimationFrame(animate);
-}
-
-async function test() {
-  const intro = document.getElementById("intro");
-  let text = "안녕하세요.";
-  const wait = (time) => new Promise((resolve) => setTimeout(resolve, time));
-
-  for (let i = 0; i < text.length; i++) {
-    intro.innerHTML += text[i];
-    await wait(100);
-  }
-
-  await wait(1000);
-
-  for (let i = text.length - 1; i > -1; i--) {
-    intro.innerHTML = intro.innerHTML.slice(0, i);
-    await wait(100);
-  }
-
-  await wait(1000);
-
-  const text2 = "프론트엔드 개발자";
-  for (let i = 0; i < text2.length; i++) {
-    intro.innerHTML += text2[i];
-    await wait(100);
-  }
-
-  intro.innerHTML += "<br / >";
-  const text3 = "양혜빈 입니다.";
-  for (let i = 0; i < text3.length; i++) {
-    intro.innerHTML += text3[i];
-    await wait(100);
-  }
+  requestAnimationFrame(render);
 }
 
 // canvas 요소 접근
 const canvas = document.getElementById("myCanvas");
+
+// 캔버스 너비를 브라우저 창 크기로 설정
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 // canvas 안에 그릴 수 있으려면 드로잉 컨텍스트에 접근해야한다.
 const ctx = canvas.getContext("2d");
-const balls = [];
-const colors = ["#304FFE", "#FFFFFF", "#FFFF00", "#FF8F00", "#FF3D00", "#40C4FF"];
 
-init();
-animate();
-test();
+// 별을 담을 배열
+let stars = [];
+
+// 별 갯수
+let starCount = (window.innerWidth + window.innerHeight) * 0.45;
+
+createStar();
+render();
