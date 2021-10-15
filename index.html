@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+
+    <!-- My custom -->
     <link rel="stylesheet" href="./style/style.css" />
     <script type="module" src="./js/canvas.js" defer></script>
+    <script type="module" src="./js/navigation.js" defer></script>
     <title>포트폴리오</title>
   </head>
   <body>
     <canvas id="myCanvas"></canvas>
+    <nav id="navigation">
+      <div class="menu active">&lt;Header /&gt;</div>
+      <div class="menu">&lt;Skills /&gt;</div>
+      <div class="menu">&lt;Career /&gt;</div>
+      <div class="menu">&lt;Projects /&gt;</div>
+      <div class="menu">&lt;Footer /&gt;</div>
+    </nav>
     <main id="intro-container"><span id="intro"></span><span class="cursor-pointer">|</span></main>
   </body>
 </html>
