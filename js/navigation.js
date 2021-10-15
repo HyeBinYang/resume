@@ -1,3 +1,12 @@
+function clearActive() {
+  menus.forEach((menu) => menu.classList.remove("active"));
+}
+
 const menus = document.querySelectorAll(".menu");
 
-console.log(menus);
+menus.forEach((menu) => {
+  menu.addEventListener("click", () => {
+    clearActive();
+    menu.classList.add("active");
+  });
+});

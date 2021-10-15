@@ -118,7 +118,6 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
 const balls = [];
 const colors = ["#304FFE", "#FFFFFF", "#FFFF00", "#FF8F00", "#FF3D00", "#40C4FF"];
-console.log(Math.floor(Math.random() * 5));
 
 init();
 animate();
