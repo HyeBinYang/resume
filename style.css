@@ -2,7 +2,8 @@
 :root {
   /* Color */
   --color-white: #ffffff;
-  --color-blue: #90caf9;
+  --color-blue: #b2ddfa;
+  --color-deep-blue: #64b5f6;
   --color-black: #000000;
 
   /* Font Size */
@@ -60,14 +61,11 @@ p {
 
 /* Navbar */
 #navbar {
-  /* background-color: var(--color-blue); */
+  background-color: var(--color-blue);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
 }
 
 .navbar__logo > i {
@@ -90,11 +88,22 @@ p {
 .navbar__menu__item {
   color: var(--color-white);
   margin: 0 25px;
+  padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.navbar__menu__item.active {
+  border: 1px solid white;
+}
+
+.navbar__menu__item:hover {
+  background-color: var(--color-deep-blue);
 }
 
 /* Home */
 #home {
+  position: relative;
   background-image: url("./imgs/background.png");
   display: flex;
   flex-direction: column;
