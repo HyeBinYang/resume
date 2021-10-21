@@ -2,6 +2,7 @@
 :root {
   /* Color */
   --color-white: #ffffff;
+  --color-blue: #90caf9;
   --color-black: #000000;
 
   /* Font Size */
@@ -22,6 +23,10 @@
 /* Universal tags */
 * {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 /* Typography */
@@ -51,4 +56,39 @@ p {
   font-weight: var(--font-regular);
   color: var(--color-black);
   margin: 4px 0;
+}
+
+/* Navbar */
+#navbar {
+  background-color: var(--color-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.navbar__logo > i {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  margin-right: 10px;
+}
+
+.navbar__logo > a {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  text-decoration: none;
+}
+
+.navbar__menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar__menu__item {
+  color: var(--color-white);
+  margin: 0 25px;
+  cursor: pointer;
 }
