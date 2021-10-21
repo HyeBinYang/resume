@@ -60,7 +60,7 @@ p {
 
 /* Navbar */
 #navbar {
-  background-color: var(--color-blue);
+  /* background-color: var(--color-blue); */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,5 +90,44 @@ p {
 .navbar__menu__item {
   color: var(--color-white);
   margin: 0 25px;
+  cursor: pointer;
+}
+
+/* Home */
+#home {
+  background-image: url("./imgs/background.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.home__avartar {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.home__title {
+  text-align: center;
+  color: var(--color-white);
+}
+
+.home__description {
+  color: var(--color-white);
+}
+
+.home__contact {
+  margin-top: 16px;
+  padding: 10px 15px;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid white;
   cursor: pointer;
 }
