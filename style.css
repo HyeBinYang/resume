@@ -118,8 +118,7 @@ p {
 .home__avartar {
   width: 200px;
   height: 200px;
-  padding: 10px;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 50%;
 }
 
@@ -354,6 +353,42 @@ p {
   margin-top: 8px;
 }
 
+/* Projects */
+#projects {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.work__categories {
+  margin: 20px 0;
+  display: flex;
+}
+
+.category__btn {
+  background-color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  padding: 12px 70px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.category__btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-deep-blue);
+}
+
+.category__count {
+  margin-left: 10px;
+  padding: 1px 5px;
+  background-color: var(--color-orange);
+  border-radius: 50%;
+}
+
 /* Contact */
 #contact {
   width: 95vw;
@@ -379,7 +414,9 @@ p {
   color: var(--color-white);
 }
 
-.contact__icon > i {
+.contact__icon > a {
   font-size: var(--font-large);
+  color: var(--color-white);
+  text-decoration: none;
   cursor: pointer;
 }
