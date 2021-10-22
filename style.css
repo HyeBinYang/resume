@@ -4,6 +4,8 @@
   --color-white: #ffffff;
   --color-blue: #b2ddfa;
   --color-deep-blue: #64b5f6;
+  --color-light-yellow: #f8ecbf;
+  --color-orange: #ffa726;
   --color-black: #000000;
 
   /* Font Size */
@@ -139,4 +141,214 @@ p {
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid white;
   cursor: pointer;
+}
+
+/* About */
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px, 0;
+}
+
+#about > p {
+  width: 70vw;
+  font-weight: var(--weight-semi-bold);
+}
+
+.about__majors {
+  width: 70vw;
+  display: flex;
+  margin: 70px 0;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.major {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 300px;
+}
+
+.major__icon {
+  position: relative;
+  border: 1px solid var(--color-deep-blue);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.major__icon > i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 130px;
+  color: var(--color-deep-blue);
+}
+
+.major__title {
+  margin: 10px 0;
+  font-size: 33px;
+  font-weight: var(--weight-bold);
+  text-align: center;
+}
+
+.major__description {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  text-align: center;
+}
+
+.about__jobs {
+  width: 70vw;
+}
+
+.job {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.job__logo {
+  margin-right: 15px;
+}
+
+.job__logo > img {
+  width: 120px;
+  height: 100px;
+}
+
+.job__description {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-regular);
+}
+
+/* Skills */
+#skills {
+  background-color: var(--color-light-yellow);
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skillset {
+  display: flex;
+  width: 80%;
+  margin-top: 30px;
+  padding-bottom: 80px;
+}
+
+/* Skillset Left */
+.skillset__left {
+  background-color: #333333;
+  color: var(--color-white);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.skillset__title {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-white);
+}
+
+.skill {
+  width: 90%;
+  margin: 20px 0;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-regular);
+}
+
+.skill__bar {
+  width: 100%;
+  height: 2px;
+  background-color: #757474;
+}
+
+.skill:nth-child(2) .skill__value {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-orange);
+}
+
+.skill:nth-child(3) .skill__value {
+  width: 75%;
+  height: 100%;
+  background-color: var(--color-orange);
+}
+
+.skill:nth-child(4) .skill__value {
+  width: 85%;
+  height: 100%;
+  background-color: var(--color-orange);
+}
+
+.skill:nth-child(5) .skill__value {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-orange);
+}
+
+.skill:nth-child(6) .skill__value {
+  width: 60%;
+  height: 100%;
+  background-color: var(--color-orange);
+}
+
+/* Skillset right */
+.skillset__right {
+  flex-grow: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools {
+  width: 100%;
+  background-color: #757474;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tools__list {
+  list-style: none;
+  padding: 0;
+  color: var(--color-white);
+  margin-top: 8px;
+}
+
+.etc {
+  width: 100%;
+  background-color: #a7a6a6;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.etc__list {
+  list-style: none;
+  padding: 0;
+  color: var(--color-white);
+  margin-top: 8px;
 }
