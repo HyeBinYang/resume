@@ -108,6 +108,48 @@ p {
   background-color: var(--color-deep-blue);
 }
 
+.navbar__menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: var(--font-medium);
+  color: var(--color-white);
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 830px) {
+  #navbar {
+    flex-direction: column;
+  }
+
+  .navbar__menu {
+    width: 100%;
+    padding-left: 0;
+    flex-direction: column;
+    display: none;
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .navbar__menu__item {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar__menu__item.active {
+    border: none;
+    background-color: var(--color-deep-blue);
+  }
+
+  .navbar__menu-btn {
+    display: block;
+  }
+}
+
 /* Home */
 #home {
   position: relative;
@@ -133,6 +175,7 @@ p {
 }
 
 .home__description {
+  text-align: center;
   color: var(--color-white);
 }
 
@@ -313,7 +356,6 @@ p {
   position: relative;
   bottom: 0;
   width: 400px;
-  height: 650px;
   background-color: var(--color-white);
   margin: 20px 80px;
   padding: 40px 20px;
@@ -331,7 +373,6 @@ p {
   position: relative;
   bottom: 0;
   width: 400px;
-  height: 450px;
   background-color: var(--color-white);
   margin: 20px 80px;
   padding: 40px 20px;
@@ -349,7 +390,6 @@ p {
   position: relative;
   bottom: 0;
   width: 400px;
-  height: 350px;
   background-color: var(--color-white);
   margin: 20px 80px;
   padding: 40px 20px;
