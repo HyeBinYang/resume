@@ -63,7 +63,7 @@ p {
 
 /* Navbar */
 #navbar {
-  background-color: var(--color-blue);
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,7 +71,6 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 2;
 }
 
@@ -101,7 +100,7 @@ p {
 }
 
 .navbar__menu__item.active {
-  border: 1px solid white;
+  background-color: var(--color-deep-blue);
 }
 
 .navbar__menu__item:hover {
@@ -110,17 +109,24 @@ p {
 
 .navbar__menu-btn {
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 20px;
+  right: 30px;
   font-size: var(--font-medium);
   color: var(--color-white);
   display: none;
   cursor: pointer;
 }
 
+.navbar__menu-btn:hover {
+  color: var(--color-deep-blue);
+}
+
 @media screen and (max-width: 830px) {
   #navbar {
+    width: 100%;
     flex-direction: column;
+    background-color: var(--color-blue);
+    padding: 20px 0;
   }
 
   .navbar__menu {
@@ -152,6 +158,7 @@ p {
 
 /* Home */
 #home {
+  width: 100%;
   position: relative;
   background-image: url("./imgs/background.png");
   display: flex;
@@ -180,6 +187,8 @@ p {
 }
 
 .home__contact {
+  position: relative;
+  bottom: 0;
   margin-top: 16px;
   padding: 10px 15px;
   font-size: var(--font-regular);
@@ -188,6 +197,11 @@ p {
   background-color: rgba(0, 0, 0, 0);
   border: 2px solid white;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.home__contact:hover {
+  bottom: -10px;
 }
 
 @media screen and (max-width: 920px) {
@@ -207,7 +221,7 @@ p {
   flex-direction: column;
   align-items: center;
   margin: 50px auto;
-  padding: 20px 4rem;
+  padding: 80px 4rem;
 }
 
 #about > h1 {
@@ -305,7 +319,7 @@ p {
   }
 
   .info__text > p:last-child {
-    font-size: var(--font-regular);
+    font-size: var(--font-small);
   }
 }
 
@@ -335,29 +349,34 @@ p {
 
 /* Skills */
 #skills {
-  background-color: var(--color-light-yellow);
+  width: 100%;
+  background-color: #ffe7ed;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 0;
 }
+#skills > h1 {
+  font-size: 56px;
+  color: var(--color-white);
+}
 
 .skillset {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  width: 85%;
-  margin-top: 30px;
+  /* justify-content: center; */
+  width: 90%;
+  margin: 30px auto 0 auto;
 }
 
 .skillset__container-front {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: 300px;
   background-color: var(--color-white);
-  margin: 20px 80px;
+  margin: 20px auto;
   padding: 40px 20px;
   border-radius: 15px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
@@ -372,9 +391,9 @@ p {
 .skillset__container-back {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: 300px;
   background-color: var(--color-white);
-  margin: 20px 80px;
+  margin: 20px auto;
   padding: 40px 20px;
   border-radius: 15px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
@@ -389,9 +408,9 @@ p {
 .skillset__container-version {
   position: relative;
   bottom: 0;
-  width: 400px;
+  width: 300px;
   background-color: var(--color-white);
-  margin: 20px 80px;
+  margin: 20px auto;
   padding: 40px 20px;
   border-radius: 15px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
@@ -406,7 +425,7 @@ p {
 .skillset__container-front > .title,
 .skillset__container-back > .title,
 .skillset__container-version > .title {
-  color: var(--color-deep-blue);
+  color: #54bbf7;
   font-weight: 600;
   font-size: var(--font-medium);
   padding-bottom: 10px;
@@ -422,6 +441,7 @@ p {
 #projects {
   max-width: 1560px;
   margin: 50px auto;
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -546,7 +566,6 @@ p {
   background-color: var(--color-deep-blue);
   display: flex;
   flex-direction: column;
-  margin-bottom: 50px;
   padding: 50px 0;
   justify-content: center;
   align-items: center;
