@@ -366,7 +366,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* justify-content: center; */
   width: 90%;
   margin: 30px auto 0 auto;
 }
@@ -435,6 +434,28 @@ p {
 .skill {
   max-width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 1050px) {
+  .skillset {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .skillset__container-front,
+  .skillset__container-back,
+  .skillset__container-version {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .skillset__container-front > .title,
+  .skillset__container-back > .title,
+  .skillset__container-version > .title {
+    font-size: 24px;
+  }
 }
 
 /* Projects */
