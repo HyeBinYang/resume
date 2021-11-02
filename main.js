@@ -1,10 +1,6 @@
 // Navbar
 const menuItems = document.querySelectorAll(".navbar__menu__item");
-const homeButton = menuItems[0];
-const aboutButton = menuItems[1];
-const skillsButton = menuItems[2];
-const projectsButton = menuItems[3];
-const navContactButton = menuItems[4];
+const [homeButton, aboutButton, skillsButton, projectsButton, careerButton, navContactButton] = menuItems;
 const menuToggleButton = document.getElementById("menuToggleButton");
 const menuBox = document.getElementById("menuBox");
 
@@ -15,9 +11,7 @@ function clearActive() {
 }
 
 window.addEventListener("scroll", () => {
-  scrollY > 0
-    ? (document.getElementById("navbar").style.background = "var(--color-blue)")
-    : (document.getElementById("navbar").style.background = "");
+  scrollY > 0 ? (document.getElementById("navbar").style.background = "var(--color-blue)") : (document.getElementById("navbar").style.background = "");
 });
 
 homeButton.addEventListener("click", () => {
@@ -51,6 +45,16 @@ projectsButton.addEventListener("click", () => {
   projectsButton.classList.add("active");
   window.scrollTo({
     top: document.getElementById("projects").offsetTop,
+    left: 0,
+    behavior: "smooth",
+  });
+});
+
+careerButton.addEventListener("click", () => {
+  clearActive();
+  careerButton.classList.add("active");
+  window.scrollTo({
+    top: document.getElementById("career").offsetTop,
     left: 0,
     behavior: "smooth",
   });
