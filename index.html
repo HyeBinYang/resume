@@ -148,8 +148,8 @@
     <section id="projects">
       <h1>My Projects</h1>
       <div class="work__categories">
-        <button class="category__btn">All<span class="category__count">3</span></button>
-        <button class="category__btn">Front-end<span class="category__count">3</span></button>
+        <button id="allButton" class="category__btn active">All<span class="category__count">3</span></button>
+        <button id="frontButton" class="category__btn">Front-end<span class="category__count">3</span></button>
       </div>
       <div class="work__projects">
         <a href="https://github.com/HyeBinYang/movie-review-app" class="project" target="_blank">
@@ -191,6 +191,42 @@
       <div class="career__jobs">
         <div class="job">
           <div class="job__logo">
+            <img src="./imgs/ssafy.png" alt="Logo" />
+          </div>
+          <div class="job__description">
+            <div class="description__intro">
+              <h2 class="description__name">SSAFY 3기</h2>
+              <h3 class="description__period">2020.01 - 2020.09</h3>
+              <span class="description__content"
+                >약 5개월 동안 (2020.01 ~ 2020.06) <b>Python, Django, HTML, CSS, JavaScript, Vue 등의</b> 교육을
+                받았으며, 배운 기술스택을 토대로 <b>영화리뷰 커뮤니티</b>,
+                <b>얼굴인식 기반 자동출석 프로그램</b> 프로젝트를 수행했습니다.
+              </span>
+            </div>
+            <div class="description__works">
+              <div class="work">
+                <h3 class="works__title">✔ 영화리뷰 커뮤니티 개발</h3>
+                <p class="works__period">2020.06 ~ 2020.06</p>
+                <ul class="work-list">
+                  <li class="work-item">페이지 전체 UI 개발</li>
+                  <li class="work-item">API 호출해서 우리가 원하는 데이터가 들어오는지에 대한 테스트</li>
+                  <li class="work-item">리뷰, 댓글(pagination) 작성 API 개발</li>
+                  <li class="work-item">로그인, 회원가입 기능 개발</li>
+                </ul>
+              </div>
+              <div class="work">
+                <h3 class="works__title">✔ 얼굴인식 기반 자동출석 프로그램 개발</h3>
+                <p class="works__period">2020.07 ~ 2020.08</p>
+                <ul class="work-list">
+                  <li class="work-item">페이지 전체 UI 개발</li>
+                  <li class="work-item">Mattermost message API 테스트</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="job">
+          <div class="job__logo">
             <img src="./imgs/solugate.png" alt="Logo" />
           </div>
           <div class="job__description">
@@ -199,7 +235,8 @@
               <h3 class="description__period">2020.09 - 2021.03</h3>
 
               <span class="description__content"
-                ><b>Jquery, Vue 기반의 프론트엔드 웹 개발 업무</b>를 담당했으며, 가끔은 기술 스택의 전환시 관련 지식의 공유를 위한 세미나를 했습니다.</span
+                ><b>Jquery, Vue 기반의 프론트엔드 웹 개발 업무</b>를 담당했으며, 가끔은 기술 스택의 전환시 관련 지식의
+                공유를 위한 세미나를 했습니다.</span
               >
             </div>
             <div class="description__works">
@@ -220,41 +257,6 @@
                   <li class="work-item">Rasa NLU 분석</li>
                   <li class="work-item">Story 페이지, Intent 페이지 개발</li>
                   <li class="work-item">Mixins, Vuex를 통한 Component 및 state 관리 최적화</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="job">
-          <div class="job__logo">
-            <img src="./imgs/ssafy.png" alt="Logo" />
-          </div>
-          <div class="job__description">
-            <div class="description__intro">
-              <h2 class="description__name">SSAFY</h2>
-              <h3 class="description__period">2020.01 - 2020.09</h3>
-              <span class="description__content"
-                >약 5개월 동안 (2020.01 ~ 2020.06) <b>Python, Django, HTML, CSS, JavaScript, Vue 등의</b> 교육을 받았으며, 배운 기술스택을 토대로
-                <b>영화리뷰 커뮤니티</b>, <b>얼굴인식 기반 자동출석 프로그램</b> 프로젝트를 수행했습니다.
-              </span>
-            </div>
-            <div class="description__works">
-              <div class="work">
-                <h3 class="works__title">✔ 영화리뷰 커뮤니티 개발</h3>
-                <p class="works__period">2020.06 ~ 2020.06</p>
-                <ul class="work-list">
-                  <li class="work-item">페이지 전체 UI 개발</li>
-                  <li class="work-item">API 호출해서 우리가 원하는 데이터가 들어오는지에 대한 테스트</li>
-                  <li class="work-item">리뷰, 댓글(pagination) 작성 API 개발</li>
-                  <li class="work-item">로그인, 회원가입 기능 개발</li>
-                </ul>
-              </div>
-              <div class="work">
-                <h3 class="works__title">✔ 얼굴인식 기반 자동출석 프로그램 개발</h3>
-                <p class="works__period">2020.07 ~ 2020.08</p>
-                <ul class="work-list">
-                  <li class="work-item">페이지 전체 UI 개발</li>
-                  <li class="work-item">Mattermost message API 테스트</li>
                 </ul>
               </div>
             </div>

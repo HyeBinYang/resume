@@ -4,24 +4,25 @@ const [homeButton, aboutButton, skillsButton, projectsButton, careerButton, navC
 const menuToggleButton = document.getElementById("menuToggleButton");
 const menuBox = document.getElementById("menuBox");
 
-function clearActive() {
-  menuItems.forEach((menu) => {
-    menu.classList.remove("active");
-  });
+function clearActive(items) {
+  items.forEach((i) => i.classList.remove("active"));
+  // menuItems.forEach((menu) => menu.classList.remove("active"));
 }
 
 window.addEventListener("scroll", () => {
-  scrollY > 0 ? (document.getElementById("navbar").style.background = "var(--color-blue)") : (document.getElementById("navbar").style.background = "");
+  scrollY > 0
+    ? (document.getElementById("navbar").style.background = "var(--color-blue)")
+    : (document.getElementById("navbar").style.background = "");
 });
 
 homeButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   homeButton.classList.add("active");
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 });
 
 aboutButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   aboutButton.classList.add("active");
   window.scrollTo({
     top: document.getElementById("about").offsetTop,
@@ -31,7 +32,7 @@ aboutButton.addEventListener("click", () => {
 });
 
 skillsButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   skillsButton.classList.add("active");
   window.scrollTo({
     top: document.getElementById("skills").offsetTop,
@@ -41,7 +42,7 @@ skillsButton.addEventListener("click", () => {
 });
 
 projectsButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   projectsButton.classList.add("active");
   window.scrollTo({
     top: document.getElementById("projects").offsetTop,
@@ -51,7 +52,7 @@ projectsButton.addEventListener("click", () => {
 });
 
 careerButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   careerButton.classList.add("active");
   window.scrollTo({
     top: document.getElementById("career").offsetTop,
@@ -61,7 +62,7 @@ careerButton.addEventListener("click", () => {
 });
 
 navContactButton.addEventListener("click", () => {
-  clearActive();
+  clearActive(menuItems);
   navContactButton.classList.add("active");
   window.scrollTo({ top: document.body.offsetHeight, left: 0, behavior: "smooth" });
 });
@@ -76,4 +77,23 @@ const contactButton = document.getElementById("contactButton");
 
 contactButton.addEventListener("click", () => {
   window.scrollTo({ top: document.body.offsetHeight, left: 0, behavior: "smooth" });
+});
+
+// Projects
+const categoryButtons = document.querySelectorAll(".category__btn");
+const allButton = document.getElementById("allButton");
+const fronButton = document.getElementById("frontButton");
+
+// function clearCategoryButtonActive() {
+//   categoryButtons.forEach((button) => button.classList.remove("active"));
+// }
+
+allButton.addEventListener("click", () => {
+  clearActive(categoryButtons);
+  allButton.classList.add("active");
+});
+
+fronButton.addEventListener("click", () => {
+  clearActive(categoryButtons);
+  fronButton.classList.add("active");
 });
