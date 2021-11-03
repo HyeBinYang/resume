@@ -233,6 +233,7 @@ p {
 
 #about > h1 {
   width: 100%;
+  font-size: 56px;
   text-align: center;
   margin: 0 auto 40px auto;
 }
@@ -580,6 +581,10 @@ p {
   background-color: #ececec;
 }
 
+#career > h1 {
+  font-size: 56px;
+}
+
 .career__jobs {
   display: flex;
   flex-direction: column;
@@ -696,6 +701,7 @@ p {
 }
 
 #contact > h1 {
+  font-size: 56px;
   color: var(--color-white);
 }
 
