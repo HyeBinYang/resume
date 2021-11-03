@@ -452,8 +452,12 @@ p {
   align-items: center;
 }
 
+#projects > h1 {
+  font-size: 56px;
+}
+
 .work__categories {
-  margin: 20px 0;
+  margin: 50px 0;
   display: flex;
 }
 
