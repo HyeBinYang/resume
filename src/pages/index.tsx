@@ -1,36 +1,39 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { Global, css } from "@emotion/react";
+import About from "components/About";
+import Header from "components/Header";
+import Career from "components/Career";
+import Divider from "components/Divider";
+import Project from "components/Project";
+import Skills from "components/Skills";
+import Education from "components/Education";
 
-type HomePageProps = {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-        description: string;
-        author: string;
-      };
-    };
-  };
-};
+const globalStyle = css`
+  body {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+`;
 
-const Home: React.FC<HomePageProps> = ({ data }) => {
+const Home = () => {
   return (
     <div>
-      <h1>{data.site.siteMetadata.title}</h1>
+      <Global styles={globalStyle} />
+      <Header />
+      <main>
+        <About />
+        <Divider />
+        <Career />
+        <Divider />
+        <Project />
+        <Divider />
+        <Skills />
+        <Divider />
+        <Education />
+      </main>
     </div>
   );
 };
 
 export default Home;
-
-export const metadataQuery = graphql`
-  {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;
