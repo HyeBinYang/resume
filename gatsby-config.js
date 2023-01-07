@@ -34,6 +34,12 @@ module.exports = {
         logo: "YMYD_Logo.png",
       },
     ],
+    education: {
+      university: "인천대학교",
+      major: "전자공학과",
+      minor: "컴퓨터공학과",
+      period: "2014.03 ~ 2020.02",
+    },
   },
   plugins: [
     `gatsby-plugin-image`,
