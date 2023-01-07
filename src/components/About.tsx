@@ -54,6 +54,7 @@ const About = () => {
       >
         {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
           <p
+            key={sentence}
             css={{
               fontSize: "16px",
             }}

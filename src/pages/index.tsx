@@ -33,7 +33,7 @@ const Home = () => {
     <div>
       <Global styles={globalStyle} />
       <Header />
-      <main>
+      <main css={{ paddingBottom: "200px" }}>
         <About />
         <Divider />
         <Experience />
