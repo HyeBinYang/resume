@@ -4,13 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
 import styled from "@emotion/styled";
-
-interface FlexProps {
-  gap?: number;
-  direction?: string;
-  alignItems?: string;
-  style?: React.CSSProperties;
-}
+import { Flex } from "./style";
 
 type ContactTitle = "email" | "github" | "phone";
 type Contact = {
@@ -19,14 +13,7 @@ type Contact = {
   href: string;
 };
 
-const CONTACT_ICON_SIZE = 24;
-
-const Flex = styled.div<FlexProps>`
-  display: flex;
-  flex-direction: ${({ direction = "row" }) => direction};
-  align-items: ${({ alignItems = "normal" }) => alignItems};
-  gap: ${({ gap = 0 }) => `${gap}px`};
-`;
+const CONTACT_ICON_SIZE = 20;
 
 const Link = styled.a`
   color: #37352f;
@@ -46,7 +33,7 @@ const About = () => {
 
   const contactIcons = useMemo(() => {
     const iconMapper = {
-      email: <MdEmail size={CONTACT_ICON_SIZE} color="pink" />,
+      email: <MdEmail size={CONTACT_ICON_SIZE} color="skyblue" />,
       github: <AiFillGithub size={CONTACT_ICON_SIZE} />,
       phone: <FcCellPhone size={CONTACT_ICON_SIZE} />,
     };
@@ -56,18 +43,37 @@ const About = () => {
 
   return (
     <section>
-      <h2>{data.site.siteMetadata.about.title}</h2>
-      <div>
+      <h2 css={{ fontSize: "32px", marginBottom: "1.3em" }}>{data.site.siteMetadata.about.title}</h2>
+      <div
+        css={{
+          marginBottom: "1.3em",
+          "* + *": {
+            marginTop: "1.2em",
+          },
+        }}
+      >
         {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
-          <p>{sentence}</p>
+          <p
+            css={{
+              fontSize: "16px",
+            }}
+          >
+            {sentence}
+          </p>
         ))}
       </div>
-      <Flex as="ul" gap={8} direction="column" css={{ marginBottom: "20px" }}>
+      <Flex as="ul" gap={4} direction="column" css={{ marginBottom: "20px" }}>
         {data.site.siteMetadata.about.contacts.map((contact: Contact, index: number) => (
-          <Flex as="li" key={contact.href} gap={4} alignItems="center">
+          <Flex as="li" key={contact.href} gap={8} alignItems="center">
             <span>{contactIcons[index]}</span>
             <Link href={contact.href}>
-              <strong>{contact.href}</strong>
+              <strong
+                css={{
+                  fontSize: "13px",
+                }}
+              >
+                {contact.href}
+              </strong>
             </Link>
           </Flex>
         ))}

@@ -2,7 +2,7 @@ import React from "react";
 import { Global, css } from "@emotion/react";
 import About from "components/About";
 import Header from "components/Header";
-import Career from "components/Career";
+import Experience from "components/Experience";
 import Divider from "components/Divider";
 import Project from "components/Project";
 import Skills from "components/Skills";
@@ -15,12 +15,13 @@ const globalStyle = css`
     padding: 0;
   }
 
-  h2 {
-    font-size: 30px;
-    margin-top: 0;
-    margin-bottom: 36px;
-  }
-
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
   ul {
     padding: 0;
     margin: 0;
@@ -35,7 +36,7 @@ const Home = () => {
       <main>
         <About />
         <Divider />
-        <Career />
+        <Experience />
         <Divider />
         <Project />
         <Divider />
