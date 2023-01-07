@@ -4,6 +4,7 @@ import { BsFillSunFill } from "react-icons/bs";
 import styled from "@emotion/styled";
 
 const HeaderWrapper = styled.header`
+  background-color: white;
   position: sticky;
   top: 0;
   width: 100%;
