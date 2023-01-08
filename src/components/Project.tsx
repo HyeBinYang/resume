@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useMemo } from "react";
-import { Flex } from "./style";
+import { Flex, ListTitle, SectionTitle } from "./style";
 
 type Project = {
   title: string;
@@ -17,17 +17,11 @@ const Project = () => {
 
   return (
     <section>
-      <h2 css={{ color: "rgba(51, 126, 169, 1)", marginBottom: "0.875em", fontSize: "1.875em" }}>Project</h2>
+      <SectionTitle>Project</SectionTitle>
       <Flex as="ul" direction="column" gap={60}>
         {projects.map((project) => (
           <Flex key={project.title} as="li" direction="column" gap={8}>
-            <h3
-              css={{
-                fontSize: "1.3em",
-              }}
-            >
-              {project.title}
-            </h3>
+            <ListTitle>{project.title}</ListTitle>
             <p css={{ color: "lightgray" }}>{project.period}</p>
             <p css={{ lineHeight: "1.75em" }}>{project.content}</p>
           </Flex>

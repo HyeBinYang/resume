@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useMemo } from "react";
-import { Flex } from "./style";
+import { Flex, ListTitle, SectionTitle } from "./style";
 
 type EducationData = {
   university: string;
@@ -16,16 +16,10 @@ const Education = () => {
 
   return (
     <section>
-      <h2 css={{ color: "rgba(51, 126, 169, 1)", marginBottom: "0.875em", fontSize: "1.875em" }}>Education</h2>
-      <Flex direction="column" gap={4}>
-        <h3
-          css={{
-            fontSize: "1.35em",
-          }}
-        >
-          {education.university} 졸업
-        </h3>
-        <p css={{ margin: "8px 0 8px", fontWeight: 700, color: "gray" }}>
+      <SectionTitle>Education</SectionTitle>
+      <Flex direction="column" gap={8}>
+        <ListTitle>{education.university} 졸업</ListTitle>
+        <p css={{ fontWeight: 700, color: "gray" }}>
           {education.major}, {education.minor}(부전공)
         </p>
         <p css={{ color: "lightgray" }}>{education.period}</p>

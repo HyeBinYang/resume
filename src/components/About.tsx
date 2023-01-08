@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
 import styled from "@emotion/styled";
-import { Flex } from "./style";
+import { Flex, SectionTitle } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 
 type ContactTitle = "email" | "github" | "phone";
@@ -45,7 +45,7 @@ const About = () => {
   return (
     <Flex as="section" gap={40}>
       <div css={{ flex: 1 }}>
-        <h2 css={{ fontSize: "32px", marginBottom: "1.3em" }}>{data.site.siteMetadata.about.title}</h2>
+        <SectionTitle>{data.site.siteMetadata.about.title}</SectionTitle>
         <div
           css={{
             marginBottom: "1.3em",
