@@ -17,7 +17,7 @@ const HeaderWrapper = styled.header`
 const Header = () => {
   return (
     <HeaderWrapper>
-      <h1 css={{ fontSize: "40px" }}>Robin's Resume</h1>
+      <h1 css={{ fontSize: "40px" }}>🧑🏻‍💻 Robin's Resume</h1>
     </HeaderWrapper>
   );
 };

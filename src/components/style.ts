@@ -1,4 +1,3 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 interface FlexProps {
@@ -8,9 +7,20 @@ interface FlexProps {
   style?: React.CSSProperties;
 }
 
-interface ListTitleProps {
+type TextProps = {
+  color?: string;
+  fontWeight?: number;
+  fontSize?: string;
+  lineHeight?: string;
   mr?: string;
-}
+};
+
+export const color = {
+  blue: "rgba(51, 126, 169)",
+  black: "#000000",
+  gray: "rgba(55,53,47,0.7)",
+  lightGray: "rgba(55,53,47,0.5)",
+};
 
 export const Flex = styled.div<FlexProps>`
   display: flex;
@@ -28,13 +38,10 @@ export const Link = styled.a`
   }
 `;
 
-export const SectionTitle = styled.h2`
-  color: rgba(51, 126, 169, 1);
-  margin-bottom: 0.875em;
-  font-size: 1.875em;
-`;
-
-export const ListTitle = styled.h3<ListTitleProps>`
-  font-size: 1.3em;
+export const Text = styled.p<TextProps>`
+  color: ${({ color }) => color};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  font-size: ${({ fontSize }) => fontSize};
+  line-height: ${({ lineHeight }) => lineHeight};
   margin: ${({ mr }) => mr};
 `;

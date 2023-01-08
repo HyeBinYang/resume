@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Flex, SectionTitle } from "./style";
+import { color, Flex, Text } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -21,18 +21,28 @@ const Experience = () => {
 
   return (
     <section>
-      <SectionTitle>Experience</SectionTitle>
+      <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
+        Experience
+      </Text>
       {experiences.map((experience) => (
         <Flex key={experience.title} alignItems="flex-start" gap={32}>
-          <div>
+          <Flex direction="column" gap={8}>
             <Flex alignItems="center" gap={12}>
               <StaticImage width={20} height={20} layout="fixed" src="../images/YMYD_Logo.png" alt="약문약답 로고" />
-              <h3 css={{ lineHeight: "1.75em", fontSize: "1.3em" }}>{experience.title}</h3>
+              <Text as="h3" lineHeight="1.75em" fontSize="1.3em">
+                {experience.title}
+              </Text>
             </Flex>
-            <p css={{ margin: "8px 0 8px", fontWeight: 700, color: "rgba(55,53,47,0.7)" }}>{experience.job}</p>
-            <p css={{ color: "rgba(55,53,47,0.5)" }}>{experience.period}</p>
-          </div>
-          <p css={{ flex: 1, lineHeight: "1.75em" }}>{experience.content}</p>
+            <Text color={color.gray} fontWeight={700}>
+              {experience.job}
+            </Text>
+            <Text color={color.lightGray} fontWeight={500}>
+              {experience.period}
+            </Text>
+          </Flex>
+          <Text lineHeight="1.75em" css={{ flex: 1 }}>
+            {experience.content}
+          </Text>
         </Flex>
       ))}
     </section>

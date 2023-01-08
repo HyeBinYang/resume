@@ -3,9 +3,9 @@ import React, { useMemo } from "react";
 import { MdEmail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
-import styled from "@emotion/styled";
-import { Flex, Link, SectionTitle } from "./style";
+import { color, Flex, Link, Text } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
+import { css } from "@emotion/react";
 
 type ContactTitle = "email" | "github" | "phone";
 type Contact = {
@@ -34,9 +34,20 @@ const About = () => {
   }, [data.site.siteMetadata.about.contacts]);
 
   return (
-    <Flex as="section" gap={40}>
-      <div css={{ flex: 1 }}>
-        <SectionTitle>{data.site.siteMetadata.about.title}</SectionTitle>
+    <Flex
+      as="section"
+      alignItems="flex-start"
+      gap={20}
+      css={css`
+        @media (max-width: 750px) {
+          flex-direction: column-reverse;
+        }
+      `}
+    >
+      <div>
+        <Text as="h2" color={color.black} css={{ marginBottom: "1.75em" }}>
+          {data.site.siteMetadata.about.title}
+        </Text>
         <div
           css={{
             marginBottom: "1.3em",
@@ -46,14 +57,9 @@ const About = () => {
           }}
         >
           {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
-            <p
-              key={sentence}
-              css={{
-                fontSize: "16px",
-              }}
-            >
+            <Text key={sentence} fontSize="16px">
               {sentence}
-            </p>
+            </Text>
           ))}
         </div>
         <Flex as="ul" gap={4} direction="column" css={{ marginBottom: "20px" }}>
@@ -61,28 +67,29 @@ const About = () => {
             <Flex as="li" key={contact.href} gap={8} alignItems="center">
               <span>{contactIcons[index]}</span>
               <Link href={contact.href}>
-                <strong
-                  css={{
-                    fontSize: "13px",
-                  }}
-                >
+                <Text as="strong" fontSize="13px">
                   {contact.href}
-                </strong>
+                </Text>
               </Link>
             </Flex>
           ))}
         </Flex>
       </div>
       <StaticImage
-        width={350}
-        height={350}
-        layout="fixed"
+        width={400}
+        height={400}
+        aspectRatio={1}
         loading="lazy"
         src="../images/profile.jpg"
         alt="내 프로필"
-        css={{
-          borderRadius: "50%",
-        }}
+        css={css`
+          border-radius: 50%;
+
+          @media (max-width: 750px) {
+            align-self: center;
+            margin-bottom: 1.25em;
+          }
+        `}
       />
     </Flex>
   );
