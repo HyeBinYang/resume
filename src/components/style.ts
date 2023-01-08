@@ -19,6 +19,15 @@ export const Flex = styled.div<FlexProps>`
   gap: ${({ gap = 0 }) => `${gap}px`};
 `;
 
+export const Link = styled.a`
+  color: #37352f;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const SectionTitle = styled.h2`
   color: rgba(51, 126, 169, 1);
   margin-bottom: 0.875em;

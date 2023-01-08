@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Flex, ListTitle, SectionTitle } from "./style";
+import { Flex, SectionTitle } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 

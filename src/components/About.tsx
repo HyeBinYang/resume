@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
 import styled from "@emotion/styled";
-import { Flex, SectionTitle } from "./style";
+import { Flex, Link, SectionTitle } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 
 type ContactTitle = "email" | "github" | "phone";
@@ -15,15 +15,6 @@ type Contact = {
 };
 
 const CONTACT_ICON_SIZE = 20;
-
-const Link = styled.a`
-  color: #37352f;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
 
 const About = () => {
   const data = useStaticQuery(query);
