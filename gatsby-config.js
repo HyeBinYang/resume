@@ -34,6 +34,75 @@ module.exports = {
         logo: "YMYD_Logo.png",
       },
     ],
+    projects: [
+      {
+        title: "약문약답 채용서비스",
+        content:
+          "병원 및 제약회사에서의 약사 채용을 위한 서비스를 개발했습니다. 초기 렌더링속도 향상과 SEO를 고려하여 SSR기반 프레임워크인 NextJS를 도입했고, 클라이언트에서 필요한 데이터와 서버에서 오는 데이터를 분리하기 위해 react-query를 도입했습니다.",
+        period: "2022.09 ~ 2022.11",
+        skills: ["Nextjs", "Redux", "React-query", "Styled-components"],
+        href: "https://biz.ymyd.co.kr",
+      },
+      {
+        title: "구인구직 서비스 UI/UX 리뉴얼 및 유지보수",
+        content:
+          "약국에서의 약사 채용을 위한 서비스인 구인구직 서비스를 전체적인 UI 개편 했습니다. 기존 구인구직 클래스 컴포넌트를 React hooks로 전환했습니다. 클라이언트에서 발생하는 에러 추적을 위해 에러 로그 수집 기능을 추가했습니다.",
+        period: "2022.05 ~ 2022.09",
+        skills: ["React", "Redux", "Styled-components"],
+      },
+      {
+        title: "사내 디자인시스템 개발 및 유지보수",
+        content:
+          "프론트엔드 개발 생산성 향상을 위해 약문약답 서비스 대부분이 사용하는 React UI Component를 Atomic design pattern기반으로 사내 디자인시스템을 개발 및 유지보수하고 있습니다.",
+        period: "2022.04 ~ 2022.05",
+        skills: ["React", "Styled-components", "Storybook", "Rollup", "Github actions", "Github package"],
+      },
+      {
+        title: "약국하이패스 Desktop App 개발 및 유지보수",
+        content:
+          "약국과 환자의 원격 처방 서비스인 약국하이패스(약국 설치용 프로그램)을 개발했습니다. 기본적인 유지보수를 비롯해 약사분들의 요구에 맞는 다양한 새로운 기능을 개발했습니다.",
+        period: "2022.01 ~ 2022.05",
+        skills: ["React", "MobX", "Styled-components", "Electron"],
+        href: "https://www.pharmacyhipass.co.kr",
+      },
+    ],
+    skills: [
+      {
+        skill: "HTML/CSS",
+        contents: [
+          "시맨틱 요소를 사용하기위해 많은 신경을 씁니다.",
+          "Flexbox, Grid system, Responsive Web 을 이해하고 레이아웃을 구현할 수 있습니다.",
+        ],
+      },
+      {
+        skill: "Javascript",
+        contents: [
+          "클로저, 호이스팅 등 코어 자바스크립트의 개념들을 이해하고 있습니다.",
+          "ES6+ 문법 사용에 능숙합니다.",
+        ],
+      },
+      {
+        skill: "Typescript",
+        contents: [
+          "기본적인 개념 (interface, enum, 제네릭 등)을 이해하고 있고, 이를 이용해 프로젝트에 적용할 수 있습니다.",
+        ],
+      },
+      {
+        skill: "React",
+        contents: [
+          "React hooks를 능숙하게 사용합니다.",
+          "컴포넌트 라이프 사이클을 정확하게 이해하고 있습니다.",
+          "React를 이용해 Web application 개발 경험이 있습니다.",
+        ],
+      },
+      {
+        skill: "NextJS",
+        contents: [
+          "Data fetching, image 최적화, routing 등을 이해하고 있고, 이를 이용해 프로젝트에서 활용할 수 있습니다.",
+          "NextJS를 이용해 Web application 개발 경험이 있습니다.",
+        ],
+      },
+    ],
     education: {
       university: "인천대학교",
       major: "전자공학과",

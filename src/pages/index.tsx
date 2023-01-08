@@ -26,6 +26,10 @@ const globalStyle = css`
     padding: 0;
     margin: 0;
   }
+
+  li {
+    list-style-type: none;
+  }
 `;
 
 const Home = () => {
@@ -33,7 +37,7 @@ const Home = () => {
     <div>
       <Global styles={globalStyle} />
       <Header />
-      <main css={{ paddingBottom: "200px" }}>
+      <main css={{ padding: "40px 20px 200px" }}>
         <About />
         <Divider />
         <Experience />
