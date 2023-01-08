@@ -7,8 +7,12 @@ const HeaderWrapper = styled.header`
   background-color: white;
   position: sticky;
   top: 0;
+  z-index: 10;
   width: 100%;
-  height: 80px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const HEADER_ICON_SIZE = 32;
@@ -25,6 +29,7 @@ const Header = () => {
       >
         <MdDarkMode size={HEADER_ICON_SIZE} />
       </button> */}
+      <h1 css={{ fontSize: "40px" }}>Robin's Resume</h1>
       <button
         css={{
           padding: "8px 10px",
