@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Robin's Portfolio page`,
-    description: `This page is Robin's Portfolio page.`,
-    author: `Robin`,
+    title: `양혜빈 이력서`,
+    description: `안녕하세요 프론트엔드 개발자 양혜빈입니다.`,
+    author: `양혜빈`,
+    favicon: "🧑🏻‍💻",
     about: {
       title: "안녕하세요 프론트엔드 개발자 양혜빈입니다.",
       content: `현재 스타트업에서 ${

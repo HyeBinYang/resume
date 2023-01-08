@@ -7,6 +7,7 @@ import Divider from "components/Divider";
 import Project from "components/Project";
 import Skills from "components/Skills";
 import Education from "components/Education";
+import SEO from "components/SEO";
 
 const globalStyle = css`
   body {
@@ -54,3 +55,7 @@ const Home = () => {
 };
 
 export default Home;
+
+export const Head = () => {
+  return <SEO />;
+};
