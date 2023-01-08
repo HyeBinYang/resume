@@ -10,9 +10,10 @@ import Education from "components/Education";
 
 const globalStyle = css`
   body {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0;
+    font-family: "Nanum Gothic", sans-serif;
   }
 
   h1,

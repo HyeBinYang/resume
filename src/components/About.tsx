@@ -5,6 +5,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
 import styled from "@emotion/styled";
 import { Flex } from "./style";
+import { StaticImage } from "gatsby-plugin-image";
 
 type ContactTitle = "email" | "github" | "phone";
 type Contact = {
@@ -42,44 +43,57 @@ const About = () => {
   }, [data.site.siteMetadata.about.contacts]);
 
   return (
-    <section>
-      <h2 css={{ fontSize: "32px", marginBottom: "1.3em" }}>{data.site.siteMetadata.about.title}</h2>
-      <div
-        css={{
-          marginBottom: "1.3em",
-          "* + *": {
-            marginTop: "1.2em",
-          },
-        }}
-      >
-        {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
-          <p
-            key={sentence}
-            css={{
-              fontSize: "16px",
-            }}
-          >
-            {sentence}
-          </p>
-        ))}
+    <Flex as="section" gap={40}>
+      <div css={{ flex: 1 }}>
+        <h2 css={{ fontSize: "32px", marginBottom: "1.3em" }}>{data.site.siteMetadata.about.title}</h2>
+        <div
+          css={{
+            marginBottom: "1.3em",
+            "* + *": {
+              marginTop: "1.2em",
+            },
+          }}
+        >
+          {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
+            <p
+              key={sentence}
+              css={{
+                fontSize: "16px",
+              }}
+            >
+              {sentence}
+            </p>
+          ))}
+        </div>
+        <Flex as="ul" gap={4} direction="column" css={{ marginBottom: "20px" }}>
+          {data.site.siteMetadata.about.contacts.map((contact: Contact, index: number) => (
+            <Flex as="li" key={contact.href} gap={8} alignItems="center">
+              <span>{contactIcons[index]}</span>
+              <Link href={contact.href}>
+                <strong
+                  css={{
+                    fontSize: "13px",
+                  }}
+                >
+                  {contact.href}
+                </strong>
+              </Link>
+            </Flex>
+          ))}
+        </Flex>
       </div>
-      <Flex as="ul" gap={4} direction="column" css={{ marginBottom: "20px" }}>
-        {data.site.siteMetadata.about.contacts.map((contact: Contact, index: number) => (
-          <Flex as="li" key={contact.href} gap={8} alignItems="center">
-            <span>{contactIcons[index]}</span>
-            <Link href={contact.href}>
-              <strong
-                css={{
-                  fontSize: "13px",
-                }}
-              >
-                {contact.href}
-              </strong>
-            </Link>
-          </Flex>
-        ))}
-      </Flex>
-    </section>
+      <StaticImage
+        width={350}
+        height={350}
+        layout="fixed"
+        loading="lazy"
+        src="../images/profile.jpg"
+        alt="내 프로필"
+        css={{
+          borderRadius: "50%",
+        }}
+      />
+    </Flex>
   );
 };
 
