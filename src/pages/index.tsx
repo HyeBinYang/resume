@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div>
       <Global styles={globalStyle} />
-      <Header />
+      {/* <Header /> */}
       <main css={{ padding: "40px 20px 200px" }}>
         <About />
         <Divider />
