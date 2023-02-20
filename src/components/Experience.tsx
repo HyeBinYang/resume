@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 
 type Experience = {
   title: string;
-  content: string;
+  contents: string[];
   job: string;
   period: string;
   logo: string;
@@ -40,9 +40,15 @@ const Experience = () => {
               {experience.period}
             </Text>
           </Flex>
-          <Text lineHeight="1.75em" css={{ flex: 1 }}>
-            {experience.content}
-          </Text>
+          <Flex as="ul" direction="column" gap={12} css={{ marginLeft: "12px" }}>
+            {experience.contents.map((content) => (
+              <li>
+                <Text fontSize="1rem" key={content}>
+                  {content}
+                </Text>
+              </li>
+            ))}
+          </Flex>
         </Flex>
       ))}
     </section>
@@ -55,7 +61,7 @@ const query = graphql`
       siteMetadata {
         experiences {
           title
-          content
+          contents
           job
           period
           logo
