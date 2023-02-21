@@ -3,31 +3,39 @@ import React, { useMemo } from "react";
 import { color, Flex, Text } from "./style";
 
 type EducationData = {
-  university: string;
-  major: string;
-  minor: string;
+  title: string;
+  description: string;
   period: string;
 };
 
 const Education = () => {
   const data = useStaticQuery(query);
 
-  const education: EducationData = useMemo(() => data.site.siteMetadata.education, [data.site.siteMetadata.education]);
+  const educations: EducationData[] = useMemo(
+    () => data.site.siteMetadata.educations,
+    [data.site.siteMetadata.educations]
+  );
 
   return (
     <section>
       <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
         Education
       </Text>
-      <Flex direction="column" gap={8}>
-        <Text as="h3" fontSize="1.3em">
-          {education.university} 졸업
-        </Text>
-        <Text fontWeight={700} color={color.gray}>
-          {education.major}, {education.minor}(부전공)
-        </Text>
-        <Text color={color.lightGray}>{education.period}</Text>
-      </Flex>
+      <div>
+        {educations.map((education) => (
+          <Flex direction="column" gap={8} css={{ marginBottom: "1.5em" }}>
+            <Text as="h3" fontSize="1.3em">
+              {education.title}
+            </Text>
+            {education.description && (
+              <Text fontWeight={700} color={color.gray}>
+                {education.description}
+              </Text>
+            )}
+            <Text color={color.lightGray}>{education.period}</Text>
+          </Flex>
+        ))}
+      </div>
     </section>
   );
 };
@@ -36,10 +44,9 @@ const query = graphql`
   {
     site {
       siteMetadata {
-        education {
-          university
-          major
-          minor
+        educations {
+          title
+          description
           period
         }
       }

@@ -29,52 +29,78 @@ module.exports = {
     experiences: [
       {
         title: `약문약답`,
-        // content: `약사전용 커뮤니티 서비스 약문약답에서 서비스 전체적인 프론트엔드 개발, 유지보수를 맡았습니다. 스타트업 업무 특성상 빠르게 새로운 기능을 만들어서 유저의 반응을 분석하는 일을 최우선으로 해왔습니다. 이를 위해 빠르게 개발하고 배포하는 역량과 User tracking 통해 얻은 데이터를 활용하여 유저를 이해하는 역량을 쌓아왔습니다.`,
         contents: [
           "약문약답 앱 UI 개선",
-          "'약국하이패스 Desktop App' 프론트엔드 개발",
-          "'약문약답 앱 구인구직 서비스' 레거시 코드 개선",
-          "'기업용 약사구인구직 서비스' 프론트엔드 개발",
+          "'약국하이패스 Desktop App' 프론트엔드 개발 및 유지보수",
+          "'약문약답 앱 구인구직 서비스' 프론트엔드 개발 및 유지보수",
+          "'기업용 약사 채용 서비스' 프론트엔드 개발",
         ],
         job: "프론트엔드 개발",
         period: "2022.01 ~ 2023.01",
         logo: "YMYD_Logo.png",
       },
+      {
+        title: `솔루게이트`,
+        contents: ["제주도 인공지능 민원서식 작성 도우미 서비스 개발"],
+        job: "개발",
+        period: "2020.09 ~ 2021.03",
+      },
     ],
     projects: [
       {
-        title: "약문약답 채용서비스",
+        title: "기업용 약사 채용 서비스 개발",
         company: "약문약답",
-        content:
-          "병원 및 제약회사에서의 약사 채용을 위한 서비스를 개발했습니다. 메인 컨텐츠 렌더링속도 향상과 SEO를 고려하여 SSR기반 프레임워크인 NextJS를 도입했고, 클라이언트에서 필요한 데이터와 서버에서 오는 데이터를 분리하기 위해 react-query를 도입했습니다.",
+        contents: [
+          "병원 및 제약회사에서의 약사 채용을 위한 서비스",
+          "NextJS를 사용하여 서비스 개발",
+          "react-query를 사용해 클라이언트에서 필요한 데이터와 서버에서 받아오는 데이터를 분리",
+        ],
         period: "2022.09 ~ 2022.11",
         skills: ["Nextjs", "Redux", "React-query", "Styled-components"],
         href: "https://biz.ymyd.co.kr",
       },
       {
-        title: "구인구직 서비스 UI/UX 리뉴얼 및 유지보수",
+        title: "구인구직 서비스 UI 개선 / 유지보수 운영",
         company: "약문약답",
-        content:
-          "약국에서의 약사 채용을 위한 서비스인 구인구직 서비스를 전체적인 UI 개편 했습니다. 기존 구인구직 클래스 컴포넌트를 React hooks로 전환했습니다. 클라이언트에서 발생하는 에러 추적을 위해 에러 로그 수집 기능을 추가했습니다.",
+        contents: [
+          "약국에서의 약사 채용을 위한 서비스",
+          "기존 클래스 컴포넌트를 React hooks로 전환",
+          "클라이언트에서의 발생하는 에러를 추적하기 위해 에러 로그 수집 시스템 도입",
+          "개선 후 구인구직 이용률 향상",
+        ],
         period: "2022.05 ~ 2022.09",
         skills: ["React", "Redux", "Styled-components"],
       },
       {
         title: "사내 디자인시스템 개발 및 유지보수",
         company: "약문약답",
-        content:
-          "프론트엔드 개발 생산성 향상을 위해 약문약답 서비스 대부분이 사용하는 React UI Component를 Atomic design pattern기반으로 사내 디자인시스템을 개발 및 유지보수하고 있습니다.",
-        period: "2022.04 ~ 2022.05",
+        contents: [
+          "서비스 개발에 사용되는 공통 UI 컴포넌트를 Atomic design pattern 기반으로 만든 사내 디자인시스템",
+          "github actions를 사용해 CI/CD 구축한 경험을 함",
+          "storybook을 사용해 UI 테스트 도입",
+          "이러한 경험으로 디자이너와의 커뮤니케이션의 중요성을 깨닫게 됨",
+        ],
+        period: "2022.04 ~ 2023.01",
         skills: ["React", "Styled-components", "Storybook", "Rollup", "Github actions", "Github package"],
       },
       {
         title: "약국하이패스 Desktop App 개발 및 유지보수",
         company: "약문약답",
-        content:
-          "약국과 환자의 원격 처방 서비스인 약국하이패스(약국 설치용 프로그램)을 개발했습니다. 기본적인 유지보수를 비롯해 약사분들의 요구에 맞는 다양한 새로운 기능을 개발했습니다.",
+        contents: [
+          "약국과 환자의 원격 처방 서비스",
+          "React, Electron, MobX, Firebase 등을 사용해 서비스 개발",
+          "UI 수정시 유저에게 빠르게 반영을 하기위해 production 환경일 때 호스팅 된 URL를 불러오도록 함",
+          "사용 유저의 컴플레인을 직접 받고 처리하는 일을 경험",
+        ],
         period: "2022.01 ~ 2022.05",
-        skills: ["React", "MobX", "Styled-components", "Electron"],
+        skills: ["React", "MobX", "Styled-components", "Electron", "Firebase"],
         href: "https://www.pharmacyhipass.co.kr",
+      },
+      {
+        title: "제주도 인공지능 민원서식 작성 도우미 서비스 개발",
+        company: "솔루게이트",
+        contents: ["서식 작성 페이지 개발", "15종 민원서식에 대한 XML 파일 작성"],
+        period: "2020.10 ~ 2021.01",
       },
     ],
     skills: [
@@ -82,44 +108,51 @@ module.exports = {
         skill: "HTML/CSS",
         contents: [
           "웹 접근성을 고려한 HTML을 작성할 수 있습니다.",
-          "Flexbox, Grid system, Responsive Web 을 이해하고 레이아웃을 구현할 수 있습니다.",
+          "반응형 웹을 구현할 수 있습니다.",
+          "Flexbox, Grid system 이해하고 이를 이용해 레이아웃을 구현할 수 있습니다.",
         ],
       },
       {
         skill: "Javascript",
         contents: [
-          "클로저, 호이스팅 등 코어 자바스크립트의 개념들을 이해하고 있습니다.",
+          "클로저, 비동기 처리 방식 등 코어 자바스크립트의 개념들을 이해하고 있습니다.",
           "ES6+ 문법 사용에 능숙합니다.",
         ],
       },
       {
         skill: "Typescript",
         contents: [
-          "기본적인 개념 (interface, enum, 제네릭 등)을 이해하고 있고, 이를 이용해 프로젝트에 적용할 수 있습니다.",
+          "기본적인 개념 (interface, enum, 제네릭 등)을 이해하고 있습니다.",
+          "Typescript를 사용해 서비스 개발 경험이 있습니다.",
         ],
       },
       {
         skill: "React",
         contents: [
-          "React hooks를 능숙하게 사용합니다.",
+          "React hooks의 기본 동작 원리를 이해하고 능숙하게 사용합니다.",
           "컴포넌트 라이프 사이클을 정확하게 이해하고 있습니다.",
-          "React를 이용해 Web application 개발 경험이 있습니다.",
+          "React를 사용해 서비스 개발 경험이 있습니다.",
         ],
       },
       {
         skill: "NextJS",
         contents: [
-          "Data fetching, image 최적화, routing 등을 이해하고 있고, 이를 이용해 프로젝트에서 활용할 수 있습니다.",
-          "NextJS를 이용해 Web application 개발 경험이 있습니다.",
+          "기본적인 지식(Data fetching, image 최적화, routing 등)을 이해하고 있습니다.",
+          "NextJS를 사용해 서비스 개발 경험이 있습니다.",
         ],
       },
     ],
-    education: {
-      university: "인천대학교",
-      major: "전자공학과",
-      minor: "컴퓨터공학과",
-      period: "2014.03 ~ 2020.02",
-    },
+    educations: [
+      {
+        title: "삼성 청년 소프트웨어 아카데미 (SSAFY) 수료",
+        period: "2020.01 ~ 2020.09",
+      },
+      {
+        title: "인천대학교 졸업",
+        description: "전자공학과(주전공), 컴퓨터공학과(부전공)",
+        period: "2014.03 ~ 2020.02",
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,

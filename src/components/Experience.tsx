@@ -19,16 +19,26 @@ const Experience = () => {
     [data.site.siteMetadata.experiences]
   );
 
+  console.log(experiences);
+
   return (
     <section>
       <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
         Experience
       </Text>
       {experiences.map((experience) => (
-        <Flex key={experience.title} alignItems="flex-start" gap={32}>
+        <Flex key={experience.title} alignItems="flex-start" gap={32} css={{ marginBottom: "60px" }}>
           <Flex direction="column" gap={8}>
             <Flex alignItems="center" gap={12}>
-              <StaticImage width={20} height={20} layout="fixed" src="../images/YMYD_Logo.png" alt="약문약답 로고" />
+              {experience.logo && (
+                <StaticImage
+                  width={20}
+                  height={20}
+                  layout="fixed"
+                  src={`../images/${experience.logo}`}
+                  alt="약문약답 로고"
+                />
+              )}
               <Text as="h3" lineHeight="1.75em" fontSize="1.3em">
                 {experience.title}
               </Text>
@@ -42,10 +52,8 @@ const Experience = () => {
           </Flex>
           <Flex as="ul" direction="column" gap={12} css={{ marginLeft: "12px" }}>
             {experience.contents.map((content) => (
-              <li>
-                <Text fontSize="1rem" key={content}>
-                  {content}
-                </Text>
+              <li key={content}>
+                <Text fontSize="1rem">{content}</Text>
               </li>
             ))}
           </Flex>

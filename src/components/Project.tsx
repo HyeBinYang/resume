@@ -4,7 +4,8 @@ import { color, Flex, Text } from "./style";
 
 type Project = {
   title: string;
-  content: string;
+  company: string;
+  contents: string[];
   period: string;
   skills: string[];
   href: string;
@@ -20,14 +21,23 @@ const Project = () => {
       <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
         Project
       </Text>
-      <Flex as="ul" direction="column" gap={60}>
+      <Flex direction="column" gap={60}>
         {projects.map((project) => (
-          <Flex key={project.title} as="li" direction="column" gap={8}>
+          <Flex key={project.title} direction="column" gap={8}>
             <Text as="h3" fontSize="1.3em">
               {project.title}
             </Text>
+            <Text color={color.gray} fontWeight={700}>
+              {project.company}
+            </Text>
             <Text color={color.lightGray}>{project.period}</Text>
-            <Text lineHeight="1.75em">{project.content}</Text>
+            <Flex as="ul" direction="column" gap={4} css={{ margin: "0.8em 0 1em 1.6em" }}>
+              {project.contents.map((content) => (
+                <li key={content}>
+                  <Text lineHeight="1.75em">{content}</Text>
+                </li>
+              ))}
+            </Flex>
           </Flex>
         ))}
       </Flex>
@@ -41,7 +51,8 @@ const query = graphql`
       siteMetadata {
         projects {
           title
-          content
+          company
+          contents
           period
           skills
           href

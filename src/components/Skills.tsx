@@ -20,10 +20,10 @@ const Skills = () => {
       <Flex as="ul" direction="column" gap={60}>
         {skills.map((item) => (
           <div key={item.skill}>
-            <Text as="h3" mr="0 0 0.6em 0">
+            <Text as="h3" mr="0 0 1em 0">
               {item.skill}
             </Text>
-            <Flex direction="column" gap={8}>
+            <Flex direction="column" gap={12}>
               {item.contents.map((content) => (
                 <li
                   key={content}
