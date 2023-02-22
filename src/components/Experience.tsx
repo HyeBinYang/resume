@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { color, Flex, Text } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import Title from "./Title";
 
 type Experience = {
   title: string;
@@ -19,13 +20,9 @@ const Experience = () => {
     [data.site.siteMetadata.experiences]
   );
 
-  console.log(experiences);
-
   return (
     <section>
-      <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
-        Experience
-      </Text>
+      <Title color={color.blue}>Experience</Title>
       {experiences.map((experience) => (
         <Flex key={experience.title} alignItems="flex-start" gap={32} css={{ marginBottom: "60px" }}>
           <Flex direction="column" gap={8}>
@@ -36,24 +33,24 @@ const Experience = () => {
                   height={20}
                   layout="fixed"
                   src={`../images/${experience.logo}`}
-                  alt="약문약답 로고"
+                  alt="회사 로고"
                 />
               )}
-              <Text as="h3" lineHeight="1.75em" fontSize="1.3em">
+              <Text as="h3" lineHeight="1.75em" fontSize="1.45em">
                 {experience.title}
               </Text>
             </Flex>
-            <Text color={color.gray} fontWeight={700}>
+            <Text color={color.gray} fontWeight={700} fontSize="1.2em">
               {experience.job}
             </Text>
-            <Text color={color.lightGray} fontWeight={500}>
+            <Text color={color.lightGray} fontWeight={500} fontSize="1.1em">
               {experience.period}
             </Text>
           </Flex>
-          <Flex as="ul" direction="column" gap={12} css={{ marginLeft: "12px" }}>
+          <Flex as="ul" direction="column" gap={16} css={{ marginLeft: "12px" }}>
             {experience.contents.map((content) => (
               <li key={content}>
-                <Text fontSize="1rem">{content}</Text>
+                <Text fontSize="1.15em">{content}</Text>
               </li>
             ))}
           </Flex>

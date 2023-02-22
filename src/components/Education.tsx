@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useMemo } from "react";
 import { color, Flex, Text } from "./style";
+import Title from "./Title";
 
 type EducationData = {
   title: string;
@@ -18,21 +19,21 @@ const Education = () => {
 
   return (
     <section>
-      <Text as="h2" color={color.blue} mr="0 0 0.875em 0" fontSize="1.875em">
-        Education
-      </Text>
+      <Title color={color.blue}>Education</Title>
       <div>
         {educations.map((education) => (
-          <Flex direction="column" gap={8} css={{ marginBottom: "1.5em" }}>
-            <Text as="h3" fontSize="1.3em">
+          <Flex direction="column" gap={10} css={{ marginBottom: "1.5em" }}>
+            <Text as="h3" fontSize="1.45em">
               {education.title}
             </Text>
             {education.description && (
-              <Text fontWeight={700} color={color.gray}>
+              <Text fontWeight={700} color={color.gray} fontSize="1.2em">
                 {education.description}
               </Text>
             )}
-            <Text color={color.lightGray}>{education.period}</Text>
+            <Text color={color.lightGray} fontWeight={500} fontSize="1.1em">
+              {education.period}
+            </Text>
           </Flex>
         ))}
       </div>

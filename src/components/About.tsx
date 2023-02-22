@@ -6,6 +6,7 @@ import { FcCellPhone } from "react-icons/fc";
 import { color, Flex, Link, Text } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { css } from "@emotion/react";
+import Title from "./Title";
 
 type ContactTitle = "email" | "github" | "phone";
 type Contact = {
@@ -45,9 +46,7 @@ const About = () => {
       `}
     >
       <div>
-        <Text as="h2" color={color.black} css={{ marginBottom: "1.75em" }}>
-          {data.site.siteMetadata.about.title}
-        </Text>
+        <Title color={color.black}>{data.site.siteMetadata.about.title}</Title>
         <div
           css={{
             marginBottom: "1.3em",
@@ -57,17 +56,17 @@ const About = () => {
           }}
         >
           {splitParagraph(data.site.siteMetadata.about.content).map((sentence: string) => (
-            <Text key={sentence} fontSize="16px">
+            <Text key={sentence} fontSize="1.2em" lineHeight="1.7em">
               {sentence}
             </Text>
           ))}
         </div>
-        <Flex as="ul" gap={4} direction="column" css={{ marginBottom: "20px" }}>
+        <Flex as="ul" gap={10} direction="column" css={{ marginBottom: "20px" }}>
           {data.site.siteMetadata.about.contacts.map((contact: Contact, index: number) => (
             <Flex as="li" key={contact.href} gap={8} alignItems="center">
               <span>{contactIcons[index]}</span>
               <Link href={contact.href}>
-                <Text as="strong" fontSize="13px">
+                <Text as="strong" fontSize="1.05em">
                   {contact.href}
                 </Text>
               </Link>
