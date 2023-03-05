@@ -3,12 +3,14 @@ import React, { useMemo } from "react";
 import { MdEmail } from "react-icons/md";
 import { AiFillGithub } from "react-icons/ai";
 import { FcCellPhone } from "react-icons/fc";
+import { GrBlog } from "react-icons/gr";
 import { color, Flex, Link, Text } from "./style";
 import { StaticImage } from "gatsby-plugin-image";
 import { css } from "@emotion/react";
 import Title from "./Title";
+import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 
-type ContactTitle = "email" | "github" | "phone";
+type ContactTitle = "email" | "github" | "phone" | "blog";
 type Contact = {
   title: ContactTitle;
   emoji: string;
@@ -25,10 +27,15 @@ const About = () => {
   };
 
   const contactIcons = useMemo(() => {
-    const iconMapper = {
+    type Icon = {
+      [K in ContactTitle]: EmotionJSX.Element;
+    };
+
+    const iconMapper: Icon = {
       email: <MdEmail size={CONTACT_ICON_SIZE} color="skyblue" />,
       github: <AiFillGithub size={CONTACT_ICON_SIZE} />,
       phone: <FcCellPhone size={CONTACT_ICON_SIZE} />,
+      blog: <GrBlog size={CONTACT_ICON_SIZE} />,
     };
 
     return data.site.siteMetadata.about.contacts.map((contact: Contact) => iconMapper[contact.title]);
